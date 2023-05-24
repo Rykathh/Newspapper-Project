@@ -5,7 +5,7 @@ var database = require('../database');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express', session: req.session });
+    res.render('index', { title: 'Login', session: req.session });
 });
 
 router.post('/login', function (request, response, next) {
