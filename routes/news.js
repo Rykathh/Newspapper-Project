@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             console.log(err.response.headers)
         } else if (err.request) {
             res.render('news', { articles: null })
-            console.log(err.requiest)
+            console.log(err.request)
         } else {
             res.render('news', { articles: null })
             console.error('Error', err.message)
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
             console.log(err.response.headers)
         } else if (err.requiest) {
             res.render('newsSingle', { article: null })
-            console.log(err.requiest)
+            console.log(err.request)
         } else {
             res.render('newsSingle', { article: null })
             console.error('Error', err.message)
@@ -56,9 +56,9 @@ router.post('/', async (req, res) => {
             console.log(err.response.data)
             console.log(err.response.status)
             console.log(err.response.headers)
-        } else if (err.requiest) {
+        } else if (err.request) {
             res.render('newsSearch', { articles: null })
-            console.log(err.requiest)
+            console.log(err.request)
         } else {
             res.render('newsSearch', { articles: null })
             console.error('Error', err.message)
