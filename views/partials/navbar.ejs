@@ -22,7 +22,7 @@
 
             </ul>
         </div>
-        <div class="nav navbar-nav navbar-right">
+        <div class="nav navbar-nav navbar-middle">
             <form action="/article" method="POST">
                 <ul class="nav navbar-nav">
                     <input type="text" class="bg-light text-dark" name="search" placeholder="Search for news"
@@ -31,5 +31,14 @@
                 </ul>
             </form>
         </div>
+<br>
+        <div class="navbar-nav navbar-right">
+            <form method="post" action="index.ejs">
+            <li class="nav-item active">
+                <input type="submit" class="btn btn-primary bg-secondary border-secondary" value="Login" />
+                <a href="/create" class="btn btn-primary bg-secondary border-secondary">Create Account</a>
+            </li>
+            </form>
+    </div>
     </div>
 </nav>
