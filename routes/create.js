@@ -18,7 +18,7 @@ router.post('/signup', function (request, response, next) {
         if (user_password == user_confirm_password) {
             query = `
             INSERT INTO user_login (user_email, user_password, username)
-            VALUES ("${user_email_address}", ${user_password}, ${username});
+            VALUES ("${user_email_address}", "${user_password}", "${username}");
             `;
 
             database.query(query, function (error, data) {
