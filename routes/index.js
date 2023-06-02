@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var database = require('../database');
+const session = require('express-session');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Login', session: req.session });
+router.get('/', function (request, response, next) {
+    response.render('index', { title: 'Login', session: request.session });
 });
 
 router.post('/login', function (request, response, next) {
@@ -48,11 +48,8 @@ router.post('/login', function (request, response, next) {
 });
 
 router.get('/logout', function (request, response, next) {
-
     request.session.destroy();
-
     response.redirect("/");
-
 });
 
 module.exports = router;

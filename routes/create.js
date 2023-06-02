@@ -3,9 +3,8 @@ var router = express.Router();
 
 var database = require('../database');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('create', { title: 'Create', session: req.session });
+router.get('/', function (request, response, next) {
+    response.render('create', { title: 'Create', session: request.session });
 });
 
 router.post('/signup', function (request, response, next) {

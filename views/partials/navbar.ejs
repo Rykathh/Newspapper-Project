@@ -3,10 +3,13 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/article">Express Js News</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="" id="navbarSupportedContent">
             <ul class="nav navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/article">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/writing">Writing</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -14,31 +17,25 @@
                 <li class="nav-item">
                     <div class="nav-link"><%- Date() %></div>
                 </li>
-                <li class="nav-item">
-                    <span class="sr-only">
-                        <a href="/logout" class="btn btn-primary bg-secondary border-secondary">Logout</a>
-                    </span>
-                </li>
-
             </ul>
         </div>
         <div class="nav navbar-nav navbar-middle">
             <form action="/article" method="POST">
                 <ul class="nav navbar-nav">
-                    <input type="text" class="bg-light text-dark" name="search" placeholder="Search for news"
-                        required>
+                    <input type="text" class="bg-light text-dark" name="search" placeholder="Search for news" required>
                     <input type="submit" class="btn btn-primary bg-secondary border-secondary" value="Search">
                 </ul>
             </form>
-        </div>
-<br>
-        <div class="navbar-nav navbar-right">
-            <form method="post" action="index.ejs">
-            <li class="nav-item active">
-                <input type="submit" class="btn btn-primary bg-secondary border-secondary" value="Login" />
-                <a href="/create" class="btn btn-primary bg-secondary border-secondary">Create Account</a>
+            <li class="nav-item">
+                <span class="sr-only">
+                    <div class="nav-link">Welcome </div>
+                </span>
             </li>
-            </form>
-    </div>
+            <li class="nav-item">
+                <span class="sr-only">
+                    <a href="/logout" class="btn btn-primary bg-secondary border-secondary">Logout</a>
+                </span>
+            </li>
+        </div>
     </div>
 </nav>

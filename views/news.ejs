@@ -17,9 +17,17 @@
             <% if(articles !=null) { %>
                 <% articles.forEach(function(article, index) { %>
                     <a href="/article/<%- article.id %>" class="news__card">
-                        <img src="<%- article.thumbnail_url %>" alt="<%- article.title.rendered %>">
-                        <h2><%- article.title.rendered %></h2>
-                        <p><%- article.excerpt.rendered %></p>
+                        <% async function toDataURL_node(url) {
+                            let response = await fetch(url);
+                            let blob = await response.blob();
+                            let buffer = Buffer.from(await blob.text());
+                            return "data:" + blob.type + ';base64,' + buffer.toString('base64');
+                        } %->
+                        <% byte[] value = thumbnail %>
+                        <% String url = "data:"+"image/png"+";base64," + Base64.encodeBase64String(value); %>
+                        <img src="<%- article.thumbnail %>" alt="<%- article.title %>">
+                        <h2><%- article.title %></h2>
+                        <p><%- article.summary %></p>
                     </a>
                     <% }) %>
                         <% } else { %>
