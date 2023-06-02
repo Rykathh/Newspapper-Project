@@ -10,11 +10,10 @@ router.get('/', function (requset, response, next) {
 router.post('/', function (request, response, next) {
     var title = request.body.title;
     var thumbnail = request.body.thumbnail;
-    var category = request.body.category;
     var content = request.body.content;
     var summary = request.body.content;
 
-    if (title && thumbnail && content && category) {
+    if (title && thumbnail && content) {
         query = `
             INSERT INTO news (title, thumbnail, content, summary)
             VALUES ("${title}", "${thumbnail}", "${content}", "${summary}");
